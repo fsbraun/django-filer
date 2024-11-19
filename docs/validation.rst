@@ -263,6 +263,7 @@ You can use it to distinguish validation for certain user groups if needed.
 If you distinguish validation by the mime type, remember to register the
 validator function for all relevant mime types.
 
+.. _virus_check:
 
 Checking uploads for viruses using ClamAV
 -----------------------------------------

@@ -6,6 +6,23 @@ Upgrading
 Usually upgrade procedure is straightforward: update the package and run migrations. Some versions
 require special attention from the developer and here we provide upgrade instructions for such cases.
 
+from 3.x to 3.3
+---------------
+
+django-filer version 3 contains a change in security policy for file uploads.
+**By default, binary file or files of unknown type are not allowed to be uploaded.**
+To allow upload of binary files in your project, add
+
+.. code-block:: python
+
+    FILER_REMOVE_FILE_VALIDATORS = [
+        "application/octet-stream",
+    ]
+
+to your project's settings. Be aware that binary files always are a security risk.
+See the :ref:`virus_check` for more information on how to configure file upload validators,
+e.g., running files through a virus checker.
+
 
 from 2.x to 3.0
 ---------------
